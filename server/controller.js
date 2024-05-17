@@ -1,9 +1,10 @@
 let saberData = [
-    {id: 0, isDefault: true, name: 'Vader Saber', color: 'red', emitter: './assets/SaberParts/VaderEmitter.png', guard: './assets/SaberParts/VaderGuard.png', switch: './assets/SaberParts/VaderSwitch.png', pommel:'./assets/SaberParts/VaderPommel.png'},
-    {id: 1, isDefault: true, name: 'Luke Saber', color: 'blue', emitter: './assets/SaberParts/LukeEmitter.png', guard: './assets/SaberParts/LukeGuard.png', switch: './assets/SaberParts/LukeSwitch.png', pommel: './assets/SaberParts/LukePommel.png'}
+    {id: 0, isDefault: true, name: 'Vader Saber', color: 'red', emitter: '../src/assets/SaberParts/VaderEmitter.png', guard: '../src/assets/SaberParts/VaderGuard.png', switch: '../src/assets/SaberParts/VaderSwitch.png', pommel:'../src/assets/SaberParts/VaderPommel.png'},
+    {id: 1, isDefault: true, name: 'Luke Saber', color: 'blue', emitter: '../src/assets/SaberParts/LukeEmitter.png', guard: '../src/assets/SaberParts/LukeGuard.png', switch: '../src/assets/SaberParts/LukeSwitch.png', pommel: '../src/assets/SaberParts/LukePommel.png'},
+    {id: 2, isDefault: true, name: 'Youngling Slayer 3000', color: 'blue', emitter: '../src/assets/SaberParts/AnakinEmitter.png', guard: '../src/assets/SaberParts/AnakinGuard.png', switch: '../src/assets/SaberParts/AnakinSwitch.png', pommel: '../src/assets/SaberParts/AnakinPommel.png'},
 ]
 
-let globalId = 2
+let globalId = 3
 
 const handlerFunctions = {
     getSabers: (req, res) => {
@@ -36,7 +37,7 @@ const handlerFunctions = {
         
         saberData = saberData.filter((el) => el.id != id)
 
-        res.status(200).send(invoiceData)
+        res.status(200).send(saberData)
     }
 }
 
