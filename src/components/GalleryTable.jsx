@@ -17,24 +17,6 @@ const GalleryTable = () => {
             })
     }, [])
 
-    const addSaberRow = () => {
-
-        const newSaber = {
-            name: 'Unnamed Saber',
-            color: 'blue',
-            isDefault: false,
-            emitter: '../src/assets/SaberParts/CalEmitter.png',
-            guard: '../src/assets/SaberParts/CalGuard.png',
-            switch: '../src/assets/SaberParts/CalSwitch.png',
-            pommel: '../src/assets/SaberParts/CalPommel.png'
-        }
-
-        axios.post('/forge', newSaber)
-            .then((res) => {
-                setSaberData(res.data)
-            })
-    }
-
     const deleteSaberRow = async (id) => {
         console.log(`Id: '${id}' will make a fine addition to my collection, hahahahahaaa.`)
 

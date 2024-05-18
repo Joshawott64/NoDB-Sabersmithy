@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json())
 
 // endpoints
-const {getSabers, addSaber, editSaber, deleteSaber, test} = handlerFunctions
+const {getSabers, addSaber, editSaber, deleteSaber} = handlerFunctions
 
 app.get('/gallery', getSabers)
 app.post('/forge', addSaber)

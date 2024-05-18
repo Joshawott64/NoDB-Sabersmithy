@@ -1,11 +1,13 @@
 import React from "react"
 
 const ForgeEmitterList = () => {
+
     return (
         <ul className='emitters'>
         <label htmlFor="emitters">Emitters:</label>
             <li>
                 <img src="../src/assets/SaberParts/AhsokaEmitter.png" alt="Ahsoka" />
+                {/* <button >Pick me!</button> */}
             </li>
             <li>
                 <img src="../src/assets/SaberParts/AnakinEmitter.png" alt="Anakin" />

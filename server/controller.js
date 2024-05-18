@@ -38,7 +38,7 @@ const handlerFunctions = {
         saberData = saberData.filter((el) => el.id != id)
 
         res.status(200).send(saberData)
-    }
+    },
 }
 
 export default handlerFunctions
