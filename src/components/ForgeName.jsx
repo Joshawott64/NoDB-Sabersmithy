@@ -1,8 +1,8 @@
 import React from "react"
 
-const ForgeName = () => {
+const ForgeName = ({value, setSaberName}) => {
     return (
-        <input type="text"/>
+        <input type="text" value={value} onChange={(e) => setSaberName(e.target.value)}/>
     )
 }
 

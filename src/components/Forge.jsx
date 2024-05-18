@@ -17,7 +17,7 @@ const Forge = () => {
     const [saberSwitch, setSaberSwitch] = useState('../src/assets/SaberParts/CalSwitch.png')
     const [saberPommel, setSaberPommel] = useState('../src/assets/SaberParts/CalPommel.png')
     const [saberColor, setSaberColor] = useState('blue')
-    const [saberName, setSaberName] = useState('')
+    const [saberName, setSaberName] = useState('Unnamed Saber')
 
     // useEffect(() => {
     //     console.log('Emitter:', saberEmitter)
@@ -33,25 +33,30 @@ const Forge = () => {
     //         })
     // }, [])
 
-    const newSaber = {
-        name: saberName,
-        color: saberColor,
-        isDefault: false,
-        emitter: saberEmitter,
-        guard: saberGuard,
-        switch: saberSwitch,
-        pommel: saberPommel
-    }
+    // const changeEmitter = async (emitter) => {
+    //     console.log('Emitter changed')
+    //     console.log('emitter:', emitter)
 
-    const changeEmitter = (url) => {
-        console.log('Emitter changed')
-        
-        setSaberEmitter(url)
-    }
+    //     const newEmitter = await axios.put(`/forge/emitter`)
+
+    //     console.log('newEmitter:', newEmitter)
+
+    //     setSaberEmitter(emitter)
+    // }
 
     const addSaber = () => {
 
         console.log('Saber saved')
+
+        const newSaber = {
+            name: saberName,
+            color: saberColor,
+            isDefault: false,
+            emitter: saberEmitter,
+            guard: saberGuard,
+            switch: saberSwitch,
+            pommel: saberPommel
+        }
 
         axios.post('/forge', newSaber)
             .then((res) => {
@@ -68,18 +73,23 @@ const Forge = () => {
         <>
             <h1>Forge</h1>
             <div>
-                <ForgeEmitterList changeEmitter={changeEmitter}/>
-                <ForgeGuardList />
-                <ForgeSwitchList />
-                <ForgePommelList />
+                <ForgeEmitterList setSaberEmitter={setSaberEmitter}/>
+                <ForgeGuardList setSaberGuard={setSaberGuard}/>
+                <ForgeSwitchList setSaberSwitch={setSaberSwitch}/>
+                <ForgePommelList setSaberPommel={setSaberPommel}/>
             </div>
             <div>
-                <p>Saber Preview</p>
+                <ForgeSaberPreview 
+                saberEmitter={saberEmitter}
+                saberGuard={saberGuard}
+                saberSwitch={saberSwitch}
+                saberPommel={saberPommel}
+                />
             </div>
             <div>
                 <form action="/forge">
                     <ForgeSaveButton addSaber={addSaber}/>
-                    <ForgeName/>
+                    <ForgeName setSaberName={setSaberName}/>
                 </form>
             </div>
         </>

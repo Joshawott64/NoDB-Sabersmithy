@@ -39,6 +39,14 @@ const handlerFunctions = {
 
         res.status(200).send(saberData)
     },
+    // changeEmitter: (req, res) => {
+    //     console.log('changeEmitter actually fired')
+    //     const emitter = req.params.value
+
+    //     console.log('emitter:', emitter)
+
+    //     res.status(200).send(emitter)
+    // }
 }
 
 export default handlerFunctions
