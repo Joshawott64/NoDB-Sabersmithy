@@ -1,8 +1,11 @@
-# React + Vite
+# NoDB Sabersmithy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sabersmithy allows users to create, edit, and delete their own lightsaber objects.
 
-Currently, two official plugins are available:
+Current features include:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- The 'Forge' where users build their saber by clicking on which components they wish to use. A preview image of their saber is rendered in real time via state values.
+- The 'Gallery' where users can view a table containing their sabers along with a few sabers the program creates by default.
+  - Each row in the gallery table has an 'Edit' and 'Delete' button (disabled for default sabers)
+  - The 'Edit' button renders a similar interface as 'Forge' and saves changes made to the given saber.
+  - The 'Delete' removes the given saber.
