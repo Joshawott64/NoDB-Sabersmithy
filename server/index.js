@@ -10,13 +10,13 @@ const app = express()
 app.use(express.json())
 
 // endpoints
-const {getSabers, addSaber, editSaber, deleteSaber, changeEmitter} = handlerFunctions
+const {getSabers, addSaber, editSaber, deleteSaber, saberToEdit} = handlerFunctions
 
 app.get('/gallery', getSabers)
 app.post('/forge', addSaber)
 app.delete('/delete/:id', deleteSaber)
 app.put('/edit/:id', editSaber)
-// app.put('/forge/emitter', changeEmitter)
+app.get('/edit/:id', saberToEdit)
 
 
 // open door to server with .listen()

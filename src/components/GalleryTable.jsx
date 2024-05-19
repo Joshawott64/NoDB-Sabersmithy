@@ -4,7 +4,7 @@ import GalleryTableHeader from './GalleryTableHeader'
 import GalleryTableRow from './GalleryTableRow'
 import AddButton from './AddButton'
 
-const GalleryTable = () => {
+const GalleryTable = ({setShowGallery, setShowForge, setShowEdit, setIdToEdit}) => {
 
     const [saberData, setSaberData] = useState([])
 
@@ -25,10 +25,6 @@ const GalleryTable = () => {
         setSaberData(newSaberArray.data)
     }
 
-    const editSaberRow = async () => {
-        
-    }
-
     const rows = saberData.map((el)  => <GalleryTableRow
         id={el.id}
         key={el.id}
@@ -40,12 +36,16 @@ const GalleryTable = () => {
         initialSwitch={el.switch}
         initialPommel={el.pommel}
         deleteSaberRow={() => deleteSaberRow(el.id)}
+        setShowGallery={setShowGallery}
+        setShowForge={setShowForge}
+        setShowEdit={setShowEdit}
+        setIdToEdit={setIdToEdit}
     />)
 
     return (
         <table>
             <thead>
-                <GalleryTableHeader />
+                <GalleryTableHeader/>
             </thead>
             <tbody>
                 {rows}

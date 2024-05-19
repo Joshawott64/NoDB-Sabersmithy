@@ -6,6 +6,7 @@ import ForgeEmitterList from "./ForgeEmitterList"
 import ForgeGuardList from "./ForgeGuardList"
 import ForgeSwitchList from "./ForgeSwitchList"
 import ForgePommelList from "./ForgePommelList"
+import ForgeColorList from "./ForgeColorList"
 import ForgeSaveButton from "./ForgeSaveButton"
 import ForgeName from "./ForgeName"
 
@@ -16,7 +17,7 @@ const Forge = () => {
     const [saberGuard, setSaberGuard] = useState('../src/assets/SaberParts/CalGuard.png')
     const [saberSwitch, setSaberSwitch] = useState('../src/assets/SaberParts/CalSwitch.png')
     const [saberPommel, setSaberPommel] = useState('../src/assets/SaberParts/CalPommel.png')
-    const [saberColor, setSaberColor] = useState('blue')
+    const [saberColor, setSaberColor] = useState('Blue')
     const [saberName, setSaberName] = useState('Unnamed Saber')
 
     // useEffect(() => {
@@ -49,9 +50,10 @@ const Forge = () => {
         console.log('Saber saved')
 
         const newSaber = {
+            id: null,
+            isDefault: false,
             name: saberName,
             color: saberColor,
-            isDefault: false,
             emitter: saberEmitter,
             guard: saberGuard,
             switch: saberSwitch,
@@ -77,13 +79,14 @@ const Forge = () => {
                 <ForgeGuardList setSaberGuard={setSaberGuard}/>
                 <ForgeSwitchList setSaberSwitch={setSaberSwitch}/>
                 <ForgePommelList setSaberPommel={setSaberPommel}/>
+                <ForgeColorList setSaberColor={setSaberColor}/>
             </div>
             <div>
                 <ForgeSaberPreview 
-                saberEmitter={saberEmitter}
-                saberGuard={saberGuard}
-                saberSwitch={saberSwitch}
-                saberPommel={saberPommel}
+                    saberEmitter={saberEmitter}
+                    saberGuard={saberGuard}
+                    saberSwitch={saberSwitch}
+                    saberPommel={saberPommel}
                 />
             </div>
             <div>

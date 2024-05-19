@@ -6,7 +6,7 @@ import GalleryEditButton from "./GalleryEditButton"
 import GalleryName from "./GalleryName"
 import GalleryColor from "./GalleryColor"
 
-const GalleryTableRow = ({initialIsDefault, initialName, initialColor, initialEmitter, initialGuard, initialSwitch, initialPommel, id, deleteSaberRow, editSaberRow}) => {
+const GalleryTableRow = ({initialIsDefault, initialName, initialColor, initialEmitter, initialGuard, initialSwitch, initialPommel, id, deleteSaberRow, setShowGallery, setShowForge, setShowEdit, setIdToEdit}) => {
 
     const [isDefault, setIsDefault] = useState(initialIsDefault)
     const [name, setName] = useState(initialName)
@@ -21,7 +21,7 @@ const GalleryTableRow = ({initialIsDefault, initialName, initialColor, initialEm
             <GalleryName value={name}/>
             <GalleryColor value={color}/>
             <GalleryImage emitter={emitter} guard={guard} saberSwitch={saberSwitch} pommel={pommel}/>
-            <GalleryEditButton isDefault={isDefault}/>
+            <GalleryEditButton id ={id} isDefault={isDefault} name={name} color={color} emitter={emitter} guard={guard} saberSwitch={saberSwitch} pommel={pommel} setShowEdit={setShowEdit} setShowGallery={setShowGallery} setShowForge={setShowForge} setIdToEdit={setIdToEdit}/>
             <GalleryDeleteButton deleteSaberRow={deleteSaberRow} isDefault={isDefault}/>
         </tr>
     )

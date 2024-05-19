@@ -2,7 +2,9 @@ import React from "react"
 
 const GalleryColor = ({value}) => {
     return (
-        <td>{value}</td>
+        <td>
+            <img src={`../src/assets/Crystals/${value}Crystal.png`} alt={value} />
+        </td>
     )
 }
 

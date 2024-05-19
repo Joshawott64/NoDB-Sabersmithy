@@ -4,7 +4,9 @@ const GalleryDeleteButton = ({isDefault, deleteSaberRow}) => {
 
     if (isDefault) {
         return (
-            <td></td>
+            <td>
+                <button disabled>Delete</button>
+            </td>
         )
     } else {
         return (
