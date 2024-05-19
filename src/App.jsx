@@ -34,9 +34,9 @@ function App() {
 
   return (
     <>
-      <div>
+      <header id="title">
         <img src={sabersmithyTitle} alt="Sabersmithy" />
-      </div>
+      </header>
 
       <div>
         <button onClick={toggleShowForge}>Forge</button>

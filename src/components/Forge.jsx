@@ -20,31 +20,6 @@ const Forge = () => {
     const [saberColor, setSaberColor] = useState('Blue')
     const [saberName, setSaberName] = useState('Unnamed Saber')
 
-    // useEffect(() => {
-    //     console.log('Emitter:', saberEmitter)
-
-    //     axios.post('/forge')
-    //         .then((res) => {
-    //             setSaberEmitter(res.data)
-    //             setSaberGuard(res.data)
-    //             setSaberSwitch(res.data)
-    //             setSaberPommel(res.data)
-    //             setSaberColor(res.data)
-    //             setSaberName(res.data)
-    //         })
-    // }, [])
-
-    // const changeEmitter = async (emitter) => {
-    //     console.log('Emitter changed')
-    //     console.log('emitter:', emitter)
-
-    //     const newEmitter = await axios.put(`/forge/emitter`)
-
-    //     console.log('newEmitter:', newEmitter)
-
-    //     setSaberEmitter(emitter)
-    // }
-
     const addSaber = () => {
 
         console.log('Saber saved')
@@ -75,13 +50,33 @@ const Forge = () => {
         <>
             <h1>Forge</h1>
             <div>
-                <ForgeEmitterList setSaberEmitter={setSaberEmitter}/>
-                <ForgeGuardList setSaberGuard={setSaberGuard}/>
-                <ForgeSwitchList setSaberSwitch={setSaberSwitch}/>
-                <ForgePommelList setSaberPommel={setSaberPommel}/>
-                <ForgeColorList setSaberColor={setSaberColor}/>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ForgeEmitterList setSaberEmitter={setSaberEmitter}/>
+                            </td>
+                            <td>
+                                <ForgeGuardList setSaberGuard={setSaberGuard}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ForgeSwitchList setSaberSwitch={setSaberSwitch}/>
+                            </td>
+                            <td>
+                                <ForgePommelList setSaberPommel={setSaberPommel}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ForgeColorList setSaberColor={setSaberColor}/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div>
+            <div id="saber-preview">
                 <ForgeSaberPreview 
                     saberEmitter={saberEmitter}
                     saberGuard={saberGuard}
@@ -90,7 +85,7 @@ const Forge = () => {
                 />
             </div>
             <div>
-                <form action="/forge">
+                <form id="save-form" name="save" action="/forge">
                     <ForgeSaveButton addSaber={addSaber}/>
                     <ForgeName setSaberName={setSaberName}/>
                 </form>

@@ -7,7 +7,6 @@ const EditGuardList = ({setSaberGuard}) => {
         <label htmlFor="guards">Guards:</label>
             <li>
                 <img src="../src/assets/SaberParts/AhsokaGuard.png" alt="Ahsoka" onClick={() => setSaberGuard("../src/assets/SaberParts/AhsokaGuard.png")}/>
-                {/* <button >Pick me!</button> */}
             </li>
             <li>
                 <img src="../src/assets/SaberParts/AnakinGuard.png" alt="Anakin" onClick={() => setSaberGuard("../src/assets/SaberParts/AnakinGuard.png")}/>

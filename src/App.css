@@ -5,11 +5,61 @@
   align-content: center;
 }
 
+#title img {
+  width: 100vh;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
 }
 
+.emitters li {
+  float: left;
+}
+
+.guards li {
+  float: left;
+}
+
+.switches li {
+  float: left;
+}
+
+.pommels li {
+  float: left;
+}
+
+.colors li {
+  float: left;
+}
+
 table {
   border: solid gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  border: solid gray;
+}
+
+td {
+  border: solid gray;
+}
+
+#saber-preview {
+  height: 250px;
+}
+
+#saber-preview ul {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+label {
+  display: block;
+  font-weight: bold;
 }

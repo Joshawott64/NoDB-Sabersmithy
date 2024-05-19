@@ -7,7 +7,6 @@ const EditSwitchList = ({setSaberSwitch}) => {
         <label htmlFor="switches">Switchs:</label>
             <li>
                 <img src="../src/assets/SaberParts/AhsokaSwitch.png" alt="Ahsoka" onClick={() => setSaberSwitch("../src/assets/SaberParts/AhsokaSwitch.png")}/>
-                {/* <button >Pick me!</button> */}
             </li>
             <li>
                 <img src="../src/assets/SaberParts/AnakinSwitch.png" alt="Anakin" onClick={() => setSaberSwitch("../src/assets/SaberParts/AnakinSwitch.png")}/>

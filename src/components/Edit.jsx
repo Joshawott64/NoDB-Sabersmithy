@@ -52,7 +52,6 @@ const Edit = ({idToEdit, setShowEdit}) => {
         )
     }, [])
 
-    
     const editSaber = (id, body) => {
 
         console.log('Saving changes...')
@@ -68,19 +67,45 @@ const Edit = ({idToEdit, setShowEdit}) => {
     return (
         <>
             <h1>Edit Saber</h1>
-            <EditEmitterList setSaberEmitter={setSaberEmitter}/>
-            <EditGuardList setSaberGuard={setSaberGuard}/>
-            <EditSwitchList setSaberSwitch={setSaberSwitch}/>
-            <EditPommelList setSaberPommel={setSaberPommel}/>
-            <EditColorList setSaberColor={setSaberColor}/>
-            <EditSaberPreview 
-                saberEmitter={saberEmitter}
-                saberGuard={saberGuard}
-                saberSwitch={saberSwitch}
-                saberPommel={saberPommel}
-            />
-            <EditName saberName={saberName} setSaberName={setSaberName}/>
-            <EditSaveButton editSaber={() => editSaber(idToEdit, tempSaber)} setShowEdit={setShowEdit}/>
+            <div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <EditEmitterList setSaberEmitter={setSaberEmitter}/>
+                            </td>
+                            <td>
+                                <EditGuardList setSaberGuard={setSaberGuard}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <EditSwitchList setSaberSwitch={setSaberSwitch}/>
+                            </td>
+                            <td>
+                                <EditPommelList setSaberPommel={setSaberPommel}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <EditColorList setSaberColor={setSaberColor}/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="saber-preview">
+                <EditSaberPreview 
+                    saberEmitter={saberEmitter}
+                    saberGuard={saberGuard}
+                    saberSwitch={saberSwitch}
+                    saberPommel={saberPommel}
+                />
+            </div>
+            <div>
+                <EditName saberName={saberName} setSaberName={setSaberName}/>
+                <EditSaveButton editSaber={() => editSaber(idToEdit, tempSaber)} setShowEdit={setShowEdit}/>
+            </div> 
         </>
     )
 }

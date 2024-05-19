@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import GalleryTableHeader from './GalleryTableHeader'
 import GalleryTableRow from './GalleryTableRow'
-import AddButton from './AddButton'
+import fineAddition from "../assets/Audio/fine_addition.mp3"
 
 const GalleryTable = ({setShowGallery, setShowForge, setShowEdit, setIdToEdit}) => {
 
@@ -21,6 +21,8 @@ const GalleryTable = ({setShowGallery, setShowForge, setShowEdit, setIdToEdit}) 
         console.log(`Id: '${id}' will make a fine addition to my collection, hahahahahaaa.`)
 
         const newSaberArray = await axios.delete(`/delete/${id}`)
+
+        new Audio(fineAddition).play()
 
         setSaberData(newSaberArray.data)
     }

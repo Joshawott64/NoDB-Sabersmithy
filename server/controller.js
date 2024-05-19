@@ -25,9 +25,6 @@ const handlerFunctions = {
         const {id} = req.params
         const editedSaber = req.body
 
-        console.log('id:', id)
-        console.log('editedSaber:', editedSaber)
-
         editedSaber.id = +id
         
         const index = saberData.findIndex((el) => el.id === +id)
@@ -45,6 +42,8 @@ const handlerFunctions = {
     },
     saberToEdit: (req, res) => {
         const {id} = req.params
+
+        console.log('saberToEdit:', saberData[id])
         
         res.status(200).send(saberData[id])
     }

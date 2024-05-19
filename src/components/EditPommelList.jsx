@@ -7,7 +7,6 @@ const EditPommelList = ({setSaberPommel}) => {
         <label htmlFor="pommels">Pommels:</label>
             <li>
                 <img src="../src/assets/SaberParts/AhsokaPommel.png" alt="Ahsoka" onClick={() => setSaberPommel("../src/assets/SaberParts/AhsokaPommel.png")}/>
-                {/* <button >Pick me!</button> */}
             </li>
             <li>
                 <img src="../src/assets/SaberParts/AnakinPommel.png" alt="Anakin" onClick={() => setSaberPommel("../src/assets/SaberParts/AnakinPommel.png")}/>

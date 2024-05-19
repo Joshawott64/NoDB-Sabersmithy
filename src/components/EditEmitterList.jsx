@@ -7,7 +7,6 @@ const EditEmitterList = ({setSaberEmitter, editSaber}) => {
         <label htmlFor="emitters">Emitters:</label>
             <li>
                 <img src="../src/assets/SaberParts/AhsokaEmitter.png" alt="Ahsoka" onClick={() => setSaberEmitter("../src/assets/SaberParts/AhsokaEmitter.png")}/>
-                {/* <button >Pick me!</button> */}
             </li>
             <li>
                 <img src="../src/assets/SaberParts/AnakinEmitter.png" alt="Anakin" onClick={() => setSaberEmitter("../src/assets/SaberParts/AnakinEmitter.png")}/>
